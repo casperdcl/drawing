@@ -1,3 +1,4 @@
+from typing import List
 from typing_extensions import Literal, Annotated, Doc, NotRequired, Optional
 
 from pydantic import BaseModel
@@ -59,5 +60,5 @@ class Drawing(BaseModel):
     """A collection of graphical elements including boxes, ellipses, arrows, and unrecognized text."""
 
     items: Annotated[
-        list[Box | Arrow | Ellipse | UnknownText], Doc("List of drawable elements.")
+        List[Box | Arrow | Ellipse | UnknownText], Doc("List of drawable elements.")
     ]
